@@ -9,9 +9,9 @@ const App = () => {
     return (
         <>
         <Navbar/>
-        {/* <Main/> */}
         <Home/>
-        {/* <Footer/> */}
+        <Main/>
+        <Footer/>
         </>
     )
 }
