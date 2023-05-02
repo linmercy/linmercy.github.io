@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './main.css'
 import img from './images/img.jpg'
 import beach from './images/beach.jpg'
@@ -7,9 +7,11 @@ import giraffe from './images/giraffe.jpg'
 import hells from './images/hells.jpg'
 import mara from './images/mara.jpg'
 import zebra from './images/zebra.jpg'
-import { GrClipboard, GrLocation } from 'react-icons/gr'
-import { FiClipboard } from 'react-icons/fi'
+import { GrLocation } from 'react-icons/gr'
 import { FaClipboardCheck } from 'react-icons/fa'
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Data = [
     {
@@ -84,11 +86,16 @@ const Data = [
 ]
 
 const Main = () => {
+    //add scroll animation
+    useEffect(()=>{
+        Aos.init({duration: 2000})
+    }, [])
+
     return (
         <section className="main container section">
-            <div className="secTitle">
+            <div data-aos="fade-up" className="secTitle">
                 <h3 className="title">
-                    Top Destinstions
+                    Top Destinations
                 </h3>
             </div>
 
@@ -98,7 +105,7 @@ const Main = () => {
                     Data.map(({id, imgSrc, destTitle, location, grade, fees, description})=>{
                         return (  
                             
-                            <div key={id} className="singleDestination">
+                            <div key={id} data-aos="fade-up" className="singleDestination">
                                 {/* return id */}
                             
                                 <div className="imageDiv">
